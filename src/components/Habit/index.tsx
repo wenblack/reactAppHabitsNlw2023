@@ -2,10 +2,8 @@ interface HabitProps {
 	completed: number
 }
 //Example of type without rest
-export function Habit(props: HabitProps) {
+export function Habit() {
 	return (
-		<div className='w-10 h-10 rounded-sm bg-violet-400 text-center'>
-			{props.completed}
-		</div>
+		<div className=' h-10 w-10 border-2 border-zinc-800 flex  items-center justify-center bg-zinc-900 rounded-lg'></div>
 	)
 }
