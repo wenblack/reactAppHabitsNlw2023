@@ -1,6 +1,7 @@
 import * as Popover from '@radix-ui/react-popover';
 import clsx from 'clsx';
 import { ProgressBar } from './ProgressBar';
+<<<<<<< HEAD
 import dayjs from 'dayjs';
 import { HabitsList } from './HabitsList';
 import { useState } from 'react';
@@ -22,11 +23,26 @@ export function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitDayPro
   function handleCompletedChaged(completed: number) {
     setCompleted(completed)
   }
+=======
+
+interface HabitDayProps {
+  completed: number
+  amount: number
+}
+
+export function HabitDay({ completed, amount }: HabitDayProps) {
+
+  const comlpetedPercentage =  Math.round((completed / amount) * 100);
+>>>>>>> 1184bab9a09838ceccfb01bac0a367e7ecacb2a0
 
   return (
     <Popover.Root>
       <Popover.Trigger
+<<<<<<< HEAD
         className={clsx("w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background", {
+=======
+        className={clsx("w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg", {
+>>>>>>> 1184bab9a09838ceccfb01bac0a367e7ecacb2a0
           'bg-zinc-900 border-zinc-800': comlpetedPercentage === 0,
           'bg-violet-900 border-violet-500': comlpetedPercentage > 0 && comlpetedPercentage < 20,
           'bg-violet-800 border-violet-500': comlpetedPercentage >= 20 && comlpetedPercentage < 40,
@@ -38,6 +54,7 @@ export function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitDayPro
 
       <Popover.Portal>
         <Popover.Content className="min-w-[320px] p-6 rounded-2xl bg-zinc-900 flex flex-col">
+<<<<<<< HEAD
           <span className="font-semibold text-zinc-400">{dayOfWeek}</span>
           <span className="mt-1 font-extrabold leading-tight text-3xl">{dayAndMonth}</span>
 
@@ -45,6 +62,13 @@ export function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitDayPro
 
           <HabitsList date={date} onCompletedChanged={handleCompletedChaged} />
 
+=======
+          <span className="font-semibold text-zinc-400">terça-feira</span>
+          <span className="mt-1 font-extrabold leading-tight text-3xl">17/01</span>
+
+          <ProgressBar progress={comlpetedPercentage} />
+
+>>>>>>> 1184bab9a09838ceccfb01bac0a367e7ecacb2a0
           <Popover.Arrow height={8} width={16} className='fill-zinc-900' />
         </Popover.Content>
       </Popover.Portal>
