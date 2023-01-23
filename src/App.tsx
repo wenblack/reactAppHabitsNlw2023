@@ -1,8 +1,5 @@
 import './styles/global.css';
-<<<<<<< HEAD
 import './lib/dayjs'
-=======
->>>>>>> 1184bab9a09838ceccfb01bac0a367e7ecacb2a0
 import { Header } from "./components/Header";
 import { SummaryTable } from "./components/SummaryTable";
 
